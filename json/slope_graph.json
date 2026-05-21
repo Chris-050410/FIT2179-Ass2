@@ -2,12 +2,6 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": 700,
   "height": 420,
-
-  "title": {
-    "text": "Malaysia Palm Oil Export Rankings Changed Over Time",
-    "subtitle": "Export value ranking by product every 5 years"
-  },
-
   "data": {
     "url": "data/vol_val_exp_product.csv"
   },
