@@ -8,7 +8,7 @@
     "subtitle": "Top five export products highlighted, minor categories muted, 2000–2020"
   },
   "data": {
-    "url": "../data/vol_val_exp_product.csv"
+    "url": "data/vol_val_exp_product.csv"
   },
   "transform": [
     {
