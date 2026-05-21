@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Interactive scatter plot showing the relationship between CPO price and FFB price across Malaysian regions.",
-  "width": 650,
-  "height": 420,
+  "width": 790,
+  "height": 300,
   "data": {
     "url": "data/combine_ffb_cpo.csv"
   },
@@ -76,6 +76,16 @@
           "#B07AA1",
           "#FF9DA7"
         ]
+      },
+      "legend": {
+        "orient": "none",
+        "direction": "vertical",
+        "legendY": 20,
+        "legendX": 20,
+        "labelFontSize": 14,
+        "titleFontSize": 16,
+        "symbolSize": 300,
+        "columns": 3
       }
     },
     "opacity": {
@@ -123,9 +133,6 @@
     },
     "view": {
       "stroke": null
-    },
-    "legend": {
-      "orient": "right"
     }
   }
 }

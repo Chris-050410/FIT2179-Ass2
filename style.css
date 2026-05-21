@@ -1,143 +1,271 @@
+* {
+  box-sizing: border-box;
+}
+
+/* Slider */
 input[type="range"]::-webkit-slider-thumb {
-    width: 15px;
-    height: 15px;
-    }
-    input[type="range"] {
-    width: 200px;
-    }
+  width: 15px;
+  height: 15px;
+}
 
-    .vega-bind {
-    font-size: 17px;
-    margin-bottom: 4px;
-    }
+input[type="range"] {
+  width: 200px;
+}
 
-    .vega-bind-name {
-    font-size: 17px;
-    }
+/* Vega bindings */
+.vega-bind {
+  font-size: 17px;
+  margin-bottom: 4px;
+}
 
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background-color: #f7f5ef;
-      color: #2b2b2b;
-    }
+.vega-bind-name {
+  font-size: 17px;
+}
 
-    .dashboard {
-      max-width: 1350px;
-      margin: 0 auto;
-      padding: 32px 24px 48px;
-    }
+/* Body */
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f7f5ef;
+  color: #2b2b2b;
+}
 
-    header {
-      text-align: center;
-      margin-bottom: 36px;
-    }
+/* Main dashboard */
+.dashboard {
+  max-width: 1350px;
+  margin: 0 auto;
+  padding: 32px 24px 48px;
+}
 
-    header h1 {
-      margin-bottom: 8px;
-      font-size: 34px;
-      color: #3b2f1f;
-    }
+/* Header */
+header {
+  text-align: center;
+  margin-bottom: 36px;
+}
 
-    header p {
-      margin: 0;
-      font-size: 16px;
-      color: #666;
-    }
+header h1 {
+  margin-bottom: 8px;
+  font-size: 34px;
+  color: #3b2f1f;
+  font-family: 'Times New Roman', Times, serif;
+}
 
-    .section {
-      margin-bottom: 36px;
-    }
+header p {
+  margin: 0;
+  font-size: 16px;
+  color: #666;
+  font-family: 'Times New Roman', Times, serif;
+}
 
-    .section h2 {
-      font-size: 24px;
-      margin-bottom: 18px;
-      color: #3b2f1f;
-      border-left: 6px solid #c97926;
-      padding-left: 12px;
-    }
+/* Sections */
+.section {
+  margin-bottom: 36px;
+}
 
-    
-    .chart-card {
-        background: white;
-        padding: 16px 18px;
-        margin-bottom: 18px;
-        border-radius: 14px;
-        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
-        overflow-x: auto;
-    }
+.section h2 {
+  font-size: 24px;
+  margin-bottom: 18px;
+  color: #3b2f1f;
+  border-left: 6px solid #c97926;
+  padding-left: 12px;
+  font-family: 'Times New Roman', Times, serif;
+}
 
-    .chart-card p {
-        margin: 0 0 10px 0;
-        padding-left: 6px;
-        font-size: 18px;
-        font-weight: 600;
-        color: black;
-    }
+/* Chart containers */
+.chart-card {
+  background: white;
+  padding: 16px 24px;
+  margin-bottom: 18px;
+  border-radius: 14px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
 
-    .two-column {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 28px;
-      align-items: start;
-    }
+/* Titles inside chart cards */
+.chart-card p {
+  margin: 0 0 4px -16px;
+  margin-left: -100;
+  padding-left: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  color: black;
+  font-family: 'Times New Roman', Times, serif;
+}
 
-    .full-width {
-      width: 100%;
-    }
+.chart-card p1 {
+  display: block;
+  margin: 0 0 10px -16px;
+  padding-left: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  color: black;
+  font-family: 'Times New Roman', Times, serif;
+}
 
-    footer {
-      text-align: center;
-      font-size: 13px;
-      color: #777;
-      margin-top: 40px;
-    }
+/* Layout helpers */
+.two-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  align-items: start;
+}
 
-    @media (max-width: 900px) {
-      .two-column {
-        grid-template-columns: 1fr;
-      }
+.full-width {
+  width: 100%;
+}
 
-      .dashboard {
-        padding: 24px 14px;
-      }
+/* Footer */
+footer {
+  text-align: center;
+  font-size: 13px;
+  color: #777;
+  margin-top: 40px;
+}
 
-      header h1 {
-        font-size: 28px;
-      }
-    }
-    #malaysia_map {
-        position: relative;
-    }
+/* Responsive */
+@media (max-width: 900px) {
 
-    #malaysia_map .vega-bindings {
-        position: absolute;
-        left: 570px;
-        top: 525px;
-        z-index: 10;
-    }
+  .two-column {
+    grid-template-columns: 1fr;
+  }
 
-    #malaysia_map .vega-bind {
-        display: flex;
-        align-items: center;
-        gap: 6px;
-    }
+  .dashboard {
+    padding: 24px 14px;
+  }
 
-    .map-wrapper {
-        position: relative;
-    }
+  header h1 {
+    font-size: 28px;
+  }
+}
 
-    .map-annotation {
-        position: absolute;
-        left: 360px;
-        top: 410px;
-        width: 300px;
-        text-align: center;
-        font-size: 15px;
-        font-weight: 450;
-        font: "Arial";
-        color: black;
-        line-height: 1.25;
-        opacity: 0.75;
-        pointer-events: none;
-    }
+/* Malaysia map */
+#malaysia_map {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* Vega chart wrapper */
+#malaysia_map .vega-embed {
+  max-width: 100%;
+}
+
+/* Slider bindings */
+#malaysia_map .vega-bindings {
+  position: absolute;
+  left: 560px;
+  top: 450px;
+  z-index: 10;
+}
+
+#malaysia_map .vega-bind {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Annotation */
+.map-wrapper {
+  position: relative;
+}
+
+.map-annotation {
+  position: absolute;
+  left: 280px;
+  top: 230px;
+  width: 300px;
+
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  line-height: 1.25;
+  opacity: 0.75;
+
+  pointer-events: none;
+}
+
+/* Insight box */
+.key-insight {
+  position: absolute;
+  right: 165px;
+  top: 425px;
+  width: 300px;
+
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+  font-family: 'Times New Roman', Times, serif;
+  color: black;
+  line-height: 1.25;
+  opacity: 0.8;
+
+  pointer-events: none;
+}
+
+.multi_line_state_insight {
+  position: absolute;
+  right: 76px;
+  top: 60px;
+  width: 320px;
+
+  text-align: left;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  line-height: 1.25;
+  opacity: 0.8;
+
+  pointer-events: none;
+}
+
+.insight-title {
+  display: block;
+  font-size: 18px;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 6px;
+}
+
+.heatmap_insight {
+  position: absolute;
+  right: 76px;
+  bottom: 40px;
+  width: 320px;
+
+  text-align: left;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  line-height: 1.25;
+  opacity: 0.8;
+
+  pointer-events: none;
+}
+
+#heatmap_small_multi_line .vega-embed {
+  margin-top: -10px;
+}
+
+.scatter_insight {
+  position: absolute;
+  right: 76px;
+  top: 50px;
+  width: 320px;
+
+  text-align: left;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  line-height: 1.25;
+  opacity: 0.8;
+
+  pointer-events: none;
+}

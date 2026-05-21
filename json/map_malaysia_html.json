@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "Malaysia choropleth map with neighbouring countries, graticule, linked bar chart and hover multi-line chart.",
+  "description": "Malaysia choropleth map using state share of national smallholders.",
   "params": [
     {
       "name": "selectedYear",
@@ -17,7 +17,7 @@
   "hconcat": [
     {
       "width": 850,
-      "height": 500,
+      "height": 430,
       "projection": {
         "type": "mercator",
         "center": [99.4, 10.0],
@@ -81,6 +81,23 @@
                 "key": "StateYear",
                 "fields": ["Value", "Year"]
               }
+            },
+            {
+              "joinaggregate": [
+                {
+                  "op": "sum",
+                  "field": "Value",
+                  "as": "TotalSmallholders"
+                }
+              ]
+            },
+            {
+              "calculate": "datum.Value / datum.TotalSmallholders * 100",
+              "as": "StateShare"
+            },
+            {
+              "calculate": "datum.StateShare < 2 ? '0% - 2%' : datum.StateShare < 5 ? '2% - 5%' : datum.StateShare < 10 ? '5% - 10%' : datum.StateShare < 20 ? '10% - 20%' : '20%+'",
+              "as": "ShareClass"
             }
           ],
           "params": [
@@ -101,16 +118,19 @@
           },
           "encoding": {
             "color": {
-              "field": "Value",
-              "type": "quantitative",
-              "title": "Smallholders",
-              "scale": {"scheme": "oranges"},
+              "field": "ShareClass",
+              "type": "ordinal",
+              "title": "Percentage Total Share",
+              "scale": {
+                "domain": ["0% - 2%", "2% - 5%", "5% - 10%", "10% - 20%", "20%+"],
+                "range": ["#fff5eb", "#fdd0a2", "#fdae6b", "#f16913", "#8c2d04"]
+              },
               "legend": {
                 "orient": "bottom",
-                "offset": 6,
-                "gradientLength": 350,
+                "offset": -20,
                 "labelFontSize": 12,
-                "titleFontSize": 15
+                "titleFontSize": 15,
+                "symbolType": "square"
               }
             },
             "opacity": {
@@ -125,6 +145,18 @@
                 "type": "quantitative",
                 "title": "Smallholders",
                 "format": ","
+              },
+              {
+                "field": "TotalSmallholders",
+                "type": "quantitative",
+                "title": "Malaysia Total",
+                "format": ","
+              },
+              {
+                "field": "StateShare",
+                "type": "quantitative",
+                "title": "Share of Total",
+                "format": ".2f"
               }
             ]
           }
@@ -151,9 +183,9 @@
             "type": "text",
             "fontSize": 12,
             "fontWeight": "bold",
-            "fill": "white",
-            "stroke": "black",
-            "strokeWidth": 0.5,
+            "fill": "#fdfdfd",
+            "stroke": "#3f3f3f",
+            "strokeWidth": 0.7,
             "align": "center",
             "baseline": "middle"
           },
@@ -168,8 +200,8 @@
     {
       "vconcat": [
         {
-          "width": 280,
-          "height": 200,
+          "width": 300,
+          "height": 300,
           "data": {
             "url": "data/num_independent_smallholder_state.csv"
           },
@@ -220,34 +252,35 @@
           }
         },
         {
-  "width": 280,
-  "height": 50,
-  "view": {
-    "stroke": null
-  },
-  "data": {
-    "values": [
-      {
-        "text": "East Malaysia’s dominance reflects its\n extensive land availability and long-established\n palm cultivation industry."
-      }
-    ]
-  },
-
-  "mark": {
-    "type": "text",
-    "align": "left",
-    "baseline": "top",
-    "font": "Arial",
-    "fontSize": 15,
-    "lineBreak": "\n",
-    "dx": -155,
-    "color": "black"
-  },
-
-  "encoding": {
-    "text": {
-      "field": "text"
+          "width": 280,
+          "height": 50,
+          "view": {
+            "stroke": null
+          },
+          "data": {
+            "values": [
+              {
+                "text": "Malaysia’s independent smallholder activity remains\n concentrated in a few dominant states, but over time\n the industry’s centre of influence increasingly shifts\n toward East Malaysia as Sabah and Sarawak expand\n their contribution to the national total."
+              }
+            ]
+          },
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "baseline": "top",
+            "font": "Arial",
+            "fontSize": 15,
+            "lineBreak": "\n",
+            "dx": -200,
+            "color": "black"
+          },
+          "encoding": {
+            "text": {
+              "field": "text"
+            }
+          }
+        }
+      ]
     }
-  }
-}]
-}]}
+  ], "spacing": 20
+}
