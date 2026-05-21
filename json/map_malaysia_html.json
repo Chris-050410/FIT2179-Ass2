@@ -81,15 +81,7 @@
                 "key": "StateYear",
                 "fields": ["Value", "Year"]
               }
-            },
-            {
-  "calculate": "datum.StateClean == 'Johor' ? 19166 : datum.StateClean == 'Kedah' ? 9500 : datum.StateClean == 'Kelantan' ? 15099 : datum.StateClean == 'Melaka' ? 1664 : datum.StateClean == 'Negeri Sembilan' ? 6686 : datum.StateClean == 'Pahang' ? 35965 : datum.StateClean == 'Perak' ? 21035 : datum.StateClean == 'Perlis' ? 821 : datum.StateClean == 'Pulau Pinang' ? 1049 : datum.StateClean == 'Selangor' ? 8104 : datum.StateClean == 'Terengganu' ? 13035 : datum.StateClean == 'Sabah' ? 73631 : datum.StateClean == 'Sarawak' ? 124450 : null",
-  "as": "StateArea"
-},
-{
-  "calculate": "datum.Value / datum.StateArea",
-  "as": "SmallholdersPerKm2"
-}
+            }
           ],
           "params": [
             {
@@ -109,19 +101,14 @@
           },
           "encoding": {
             "color": {
-              "field": "SmallholdersPerKm2",
+              "field": "Value",
               "type": "quantitative",
-              "title": "Smallholders per km²",
-              "bin": {
-    "extent": [0, 10],
-    "step": 2
-  },
-              "scale": {
-    "scheme": "oranges"
-  },
+              "title": "Smallholders",
+              "scale": {"scheme": "oranges"},
               "legend": {
                 "orient": "bottom",
-                "title": "Smallholders per km²",
+                "offset": 6,
+                "gradientLength": 350,
                 "labelFontSize": 12,
                 "titleFontSize": 15
               }
@@ -134,10 +121,10 @@
               {"field": "StateClean", "type": "nominal", "title": "State"},
               {"field": "Year", "type": "quantitative", "title": "Year"},
               {
-                "field": "SmallholdersPerKm2",
+                "field": "Value",
                 "type": "quantitative",
-                "title": "Smallholders per km²",
-                "format": ".2f"
+                "title": "Smallholders",
+                "format": ","
               }
             ]
           }
