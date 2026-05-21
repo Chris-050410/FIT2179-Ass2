@@ -9,7 +9,7 @@
   },
 
   "data": {
-    "url": "../data/vol_val_exp_product.csv"
+    "url": "data/vol_val_exp_product.csv"
   },
 
   "transform": [
