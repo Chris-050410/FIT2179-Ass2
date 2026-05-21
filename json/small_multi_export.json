@@ -2,12 +2,6 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
 
   "description": "Small multiple line charts showing Malaysia palm oil export value by product from 2000 to 2020.",
-
-  "title": {
-    "text": "Malaysia Palm Oil Export Value by Product",
-    "subtitle": "Panels are ordered from highest to lowest total export value, 2000–2020"
-  },
-
   "data": {
     "url": "data/vol_val_exp_product.csv"
   },
