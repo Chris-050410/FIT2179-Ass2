@@ -3,10 +3,6 @@
   "description": "Interactive scatter plot showing the relationship between CPO price and FFB price across Malaysian regions.",
   "width": 650,
   "height": 420,
-  "title": {
-    "text": "CPO Price and FFB Price Move Together",
-    "subtitle": "Click a region in the legend to highlight it"
-  },
   "data": {
     "url": "data/combine_ffb_cpo.csv"
   },
