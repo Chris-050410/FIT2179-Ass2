@@ -8,7 +8,7 @@
     "subtitle": "Click a region in the legend to highlight it"
   },
   "data": {
-    "url": "../data/combine_ffb_cpo.csv"
+    "url": "data/combine_ffb_cpo.csv"
   },
   "transform": [
     {
