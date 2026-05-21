@@ -3,10 +3,6 @@
   "description": "Stacked area chart showing Malaysia palm oil export value composition by product from 2000 to 2020.",
   "width": 800,
   "height": 450,
-  "title": {
-    "text": "Processed Palm Oil Dominates Malaysia's Palm Oil Exports",
-    "subtitle": "Top five export products highlighted, minor categories muted, 2000–2020"
-  },
   "data": {
     "url": "data/vol_val_exp_product.csv"
   },
