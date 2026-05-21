@@ -2,10 +2,6 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": 760,
   "height": 420,
-  "title": {
-    "text": "Malaysia is a Key Player in the Global Palm Oil Industry",
-    "subtitle": "CPO production across major producing countries, 2010–2024"
-  },
   "data": {
     "url": "data/CPO-Production.csv"
   },
