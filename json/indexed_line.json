@@ -9,7 +9,7 @@
   },
 
   "data": {
-    "url": "../data/CPO-Production.csv"
+    "url": "data/CPO-Production.csv"
   },
 
   "params": [
