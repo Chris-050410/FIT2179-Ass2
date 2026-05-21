@@ -94,12 +94,6 @@
       }
     },
     {
-      "title": {
-        "text": "Regional FFB Price Trends",
-        "subtitle": "Selected heatmap range is highlighted while full trend remains visible",
-        "anchor": "start",
-        "offset": 8
-      },
       "facet": {
         "field": "Region",
         "type": "nominal",
