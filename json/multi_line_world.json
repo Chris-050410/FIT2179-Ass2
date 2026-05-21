@@ -7,7 +7,7 @@
     "subtitle": "CPO production across major producing countries, 2010–2024"
   },
   "data": {
-    "url": "../data/CPO-Production.csv"
+    "url": "data/CPO-Production.csv"
   },
   "transform": [
     {
