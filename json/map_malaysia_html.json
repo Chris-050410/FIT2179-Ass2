@@ -222,7 +222,9 @@
         {
   "width": 280,
   "height": 50,
-
+  "view": {
+    "stroke": null
+  },
   "data": {
     "values": [
       {
