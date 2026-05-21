@@ -8,11 +8,6 @@
     {
       "width": 900,
       "height": 300,
-      "title": {
-        "text": "FFB Prices(RM Tonnes) Across Regions Over Time",
-        "subtitle": "Drag across the heatmap to select year and region ranges",
-        "anchor": "start"
-      },
       "params": [
         {
           "name": "selectedCells",
