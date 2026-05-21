@@ -1,0 +1,222 @@
+State,Year,Value,StateYear
+Johor,2000,39711,Johor-2000
+Johor,2001,43071,Johor-2001
+Johor,2002,45817,Johor-2002
+Johor,2003,46702,Johor-2003
+Johor,2004,49336,Johor-2004
+Johor,2005,49466,Johor-2005
+Johor,2006,50805,Johor-2006
+Johor,2007,47852,Johor-2007
+Johor,2008,55182,Johor-2008
+Johor,2009,60387,Johor-2009
+Johor,2010,64484,Johor-2010
+Johor,2011,66490,Johor-2011
+Johor,2012,60991,Johor-2012
+Johor,2013,65797,Johor-2013
+Johor,2014,67499,Johor-2014
+Johor,2015,69606,Johor-2015
+Johor,2016,78711,Johor-2016
+Kedah,2000,1485,Kedah-2000
+Kedah,2001,1645,Kedah-2001
+Kedah,2002,1822,Kedah-2002
+Kedah,2003,2149,Kedah-2003
+Kedah,2004,2432,Kedah-2004
+Kedah,2005,2595,Kedah-2005
+Kedah,2006,2738,Kedah-2006
+Kedah,2007,2797,Kedah-2007
+Kedah,2008,3214,Kedah-2008
+Kedah,2009,3437,Kedah-2009
+Kedah,2010,3729,Kedah-2010
+Kedah,2011,4215,Kedah-2011
+Kedah,2012,4363,Kedah-2012
+Kedah,2013,4646,Kedah-2013
+Kedah,2014,4926,Kedah-2014
+Kedah,2015,5239,Kedah-2015
+Kedah,2016,6045,Kedah-2016
+Kelantan,2000,103,Kelantan-2000
+Kelantan,2001,117,Kelantan-2001
+Kelantan,2002,136,Kelantan-2002
+Kelantan,2003,189,Kelantan-2003
+Kelantan,2004,232,Kelantan-2004
+Kelantan,2005,334,Kelantan-2005
+Kelantan,2006,380,Kelantan-2006
+Kelantan,2007,353,Kelantan-2007
+Kelantan,2008,468,Kelantan-2008
+Kelantan,2009,521,Kelantan-2009
+Kelantan,2010,654,Kelantan-2010
+Kelantan,2011,775,Kelantan-2011
+Kelantan,2012,861,Kelantan-2012
+Kelantan,2013,1025,Kelantan-2013
+Kelantan,2014,1171,Kelantan-2014
+Kelantan,2015,1298,Kelantan-2015
+Kelantan,2016,1784,Kelantan-2016
+Melaka,2000,626,Melaka-2000
+Melaka,2001,683,Melaka-2001
+Melaka,2002,895,Melaka-2002
+Melaka,2003,1021,Melaka-2003
+Melaka,2004,1053,Melaka-2004
+Melaka,2005,1281,Melaka-2005
+Melaka,2006,1348,Melaka-2006
+Melaka,2007,1240,Melaka-2007
+Melaka,2008,1520,Melaka-2008
+Melaka,2009,1672,Melaka-2009
+Melaka,2010,1817,Melaka-2010
+Melaka,2011,1970,Melaka-2011
+Melaka,2012,2060,Melaka-2012
+Melaka,2013,2166,Melaka-2013
+Melaka,2014,2286,Melaka-2014
+Melaka,2015,2480,Melaka-2015
+Melaka,2016,3308,Melaka-2016
+Negeri Sembilan,2000,2015,Negeri Sembilan-2000
+Negeri Sembilan,2001,2104,Negeri Sembilan-2001
+Negeri Sembilan,2002,2231,Negeri Sembilan-2002
+Negeri Sembilan,2003,2410,Negeri Sembilan-2003
+Negeri Sembilan,2004,2031,Negeri Sembilan-2004
+Negeri Sembilan,2005,2308,Negeri Sembilan-2005
+Negeri Sembilan,2006,2473,Negeri Sembilan-2006
+Negeri Sembilan,2007,2326,Negeri Sembilan-2007
+Negeri Sembilan,2008,2918,Negeri Sembilan-2008
+Negeri Sembilan,2009,3194,Negeri Sembilan-2009
+Negeri Sembilan,2010,3437,Negeri Sembilan-2010
+Negeri Sembilan,2011,3779,Negeri Sembilan-2011
+Negeri Sembilan,2012,4109,Negeri Sembilan-2012
+Negeri Sembilan,2013,4325,Negeri Sembilan-2013
+Negeri Sembilan,2014,4511,Negeri Sembilan-2014
+Negeri Sembilan,2015,4928,Negeri Sembilan-2015
+Negeri Sembilan,2016,5271,Negeri Sembilan-2016
+Pahang,2000,3277,Pahang-2000
+Pahang,2001,3381,Pahang-2001
+Pahang,2002,3819,Pahang-2002
+Pahang,2003,4444,Pahang-2003
+Pahang,2004,4928,Pahang-2004
+Pahang,2005,5223,Pahang-2005
+Pahang,2006,5818,Pahang-2006
+Pahang,2007,6319,Pahang-2007
+Pahang,2008,6822,Pahang-2008
+Pahang,2009,7243,Pahang-2009
+Pahang,2010,7564,Pahang-2010
+Pahang,2011,7924,Pahang-2011
+Pahang,2012,8391,Pahang-2012
+Pahang,2013,8967,Pahang-2013
+Pahang,2014,9381,Pahang-2014
+Pahang,2015,10013,Pahang-2015
+Pahang,2016,12468,Pahang-2016
+Perak,2000,15921,Perak-2000
+Perak,2001,17248,Perak-2001
+Perak,2002,18573,Perak-2002
+Perak,2003,20120,Perak-2003
+Perak,2004,5646,Perak-2004
+Perak,2005,22162,Perak-2005
+Perak,2006,22904,Perak-2006
+Perak,2007,23522,Perak-2007
+Perak,2008,26563,Perak-2008
+Perak,2009,28974,Perak-2009
+Perak,2010,31254,Perak-2010
+Perak,2011,33510,Perak-2011
+Perak,2012,31403,Perak-2012
+Perak,2013,34194,Perak-2013
+Perak,2014,35669,Perak-2014
+Perak,2015,38404,Perak-2015
+Perak,2016,42274,Perak-2016
+Perlis,2000,0,Perlis-2000
+Perlis,2001,0,Perlis-2001
+Perlis,2002,1,Perlis-2002
+Perlis,2003,2,Perlis-2003
+Perlis,2004,4,Perlis-2004
+Perlis,2005,6,Perlis-2005
+Perlis,2006,6,Perlis-2006
+Perlis,2007,7,Perlis-2007
+Perlis,2008,9,Perlis-2008
+Perlis,2009,9,Perlis-2009
+Perlis,2010,9,Perlis-2010
+Perlis,2011,8,Perlis-2011
+Perlis,2012,8,Perlis-2012
+Perlis,2013,8,Perlis-2013
+Perlis,2014,12,Perlis-2014
+Perlis,2015,11,Perlis-2015
+Perlis,2016,68,Perlis-2016
+Pulau Pinang,2000,1119,Pulau Pinang-2000
+Pulau Pinang,2001,1105,Pulau Pinang-2001
+Pulau Pinang,2002,1102,Pulau Pinang-2002
+Pulau Pinang,2003,1145,Pulau Pinang-2003
+Pulau Pinang,2004,1184,Pulau Pinang-2004
+Pulau Pinang,2005,1192,Pulau Pinang-2005
+Pulau Pinang,2006,1213,Pulau Pinang-2006
+Pulau Pinang,2007,1218,Pulau Pinang-2007
+Pulau Pinang,2008,1287,Pulau Pinang-2008
+Pulau Pinang,2009,1378,Pulau Pinang-2009
+Pulau Pinang,2010,1445,Pulau Pinang-2010
+Pulau Pinang,2011,1568,Pulau Pinang-2011
+Pulau Pinang,2012,1612,Pulau Pinang-2012
+Pulau Pinang,2013,1682,Pulau Pinang-2013
+Pulau Pinang,2014,1723,Pulau Pinang-2014
+Pulau Pinang,2015,1750,Pulau Pinang-2015
+Pulau Pinang,2016,3834,Pulau Pinang-2016
+Selangor,2000,15324,Selangor-2000
+Selangor,2001,16182,Selangor-2001
+Selangor,2002,15271,Selangor-2002
+Selangor,2003,16955,Selangor-2003
+Selangor,2004,15012,Selangor-2004
+Selangor,2005,14370,Selangor-2005
+Selangor,2006,15261,Selangor-2006
+Selangor,2007,13604,Selangor-2007
+Selangor,2008,15421,Selangor-2008
+Selangor,2009,16136,Selangor-2009
+Selangor,2010,17026,Selangor-2010
+Selangor,2011,17889,Selangor-2011
+Selangor,2012,18597,Selangor-2012
+Selangor,2013,19062,Selangor-2013
+Selangor,2014,19431,Selangor-2014
+Selangor,2015,19783,Selangor-2015
+Selangor,2016,25543,Selangor-2016
+Terengganu,2000,582,Terengganu-2000
+Terengganu,2001,605,Terengganu-2001
+Terengganu,2002,641,Terengganu-2002
+Terengganu,2003,727,Terengganu-2003
+Terengganu,2004,947,Terengganu-2004
+Terengganu,2005,980,Terengganu-2005
+Terengganu,2006,988,Terengganu-2006
+Terengganu,2007,884,Terengganu-2007
+Terengganu,2008,1178,Terengganu-2008
+Terengganu,2009,1537,Terengganu-2009
+Terengganu,2010,1751,Terengganu-2010
+Terengganu,2011,1947,Terengganu-2011
+Terengganu,2012,2291,Terengganu-2012
+Terengganu,2013,2407,Terengganu-2013
+Terengganu,2014,2598,Terengganu-2014
+Terengganu,2015,2721,Terengganu-2015
+Terengganu,2016,3585,Terengganu-2016
+Sabah,2000,5994,Sabah-2000
+Sabah,2001,6968,Sabah-2001
+Sabah,2002,7724,Sabah-2002
+Sabah,2003,9643,Sabah-2003
+Sabah,2004,11385,Sabah-2004
+Sabah,2005,12840,Sabah-2005
+Sabah,2006,14346,Sabah-2006
+Sabah,2007,15696,Sabah-2007
+Sabah,2008,18917,Sabah-2008
+Sabah,2009,21653,Sabah-2009
+Sabah,2010,24021,Sabah-2010
+Sabah,2011,25922,Sabah-2011
+Sabah,2012,26660,Sabah-2012
+Sabah,2013,29685,Sabah-2013
+Sabah,2014,32740,Sabah-2014
+Sabah,2015,33669,Sabah-2015
+Sabah,2016,39824,Sabah-2016
+Sarawak,2000,1560,Sarawak-2000
+Sarawak,2001,1837,Sarawak-2001
+Sarawak,2002,2214,Sarawak-2002
+Sarawak,2003,2581,Sarawak-2003
+Sarawak,2004,2980,Sarawak-2004
+Sarawak,2005,3002,Sarawak-2005
+Sarawak,2006,3679,Sarawak-2006
+Sarawak,2007,4619,Sarawak-2007
+Sarawak,2008,6112,Sarawak-2008
+Sarawak,2009,7300,Sarawak-2009
+Sarawak,2010,9930,Sarawak-2010
+Sarawak,2011,13353,Sarawak-2011
+Sarawak,2012,15700,Sarawak-2012
+Sarawak,2013,18234,Sarawak-2013
+Sarawak,2014,23023,Sarawak-2014
+Sarawak,2015,30179,Sarawak-2015
+Sarawak,2016,57034,Sarawak-2016
