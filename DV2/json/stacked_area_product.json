@@ -1,0 +1,114 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Stacked area chart showing Malaysia palm oil export value composition by product from 2000 to 2020.",
+  "width": 800,
+  "height": 450,
+  "title": {
+    "text": "Processed Palm Oil Dominates Malaysia's Palm Oil Exports",
+    "subtitle": "Top five export products highlighted, minor categories muted, 2000–2020"
+  },
+  "data": {
+    "url": "../data/vol_val_exp_product.csv"
+  },
+  "transform": [
+    {
+      "filter": "datum['Value (RM Million)'] != '-'"
+    },
+    {
+      "calculate": "toNumber(datum['Value (RM Million)'])",
+      "as": "ValueRM"
+    },
+    {
+      "calculate": "datum['Sub product'] && datum['Sub product'] != '' ? datum['Sub product'] : datum['Poduct']",
+      "as": "ProductName"
+    },
+    {
+      "calculate": "indexof(['Processed Palm Oil', 'Oleochemicals', 'Crude Palm Oil', 'Processed Palm Kernel Oil', 'Finished Products'], datum.ProductName) >= 0 ? datum.ProductName : 'Other minor products'",
+      "as": "ProductGroup"
+    },
+    {
+      "calculate": "datum.ProductGroup == 'Other minor products' ? 1 : datum.ProductGroup == 'Finished Products' ? 2 : datum.ProductGroup == 'Processed Palm Kernel Oil' ? 3 : datum.ProductGroup == 'Crude Palm Oil' ? 4 : datum.ProductGroup == 'Oleochemicals' ? 5 : 6",
+      "as": "StackOrder"
+    }
+  ],
+  "mark": {
+    "type": "area",
+    "interpolate": "monotone"
+  },
+  "encoding": {
+    "x": {
+      "field": "Year",
+      "type": "ordinal",
+      "title": "Year",
+      "axis": {
+        "labelAngle": 0
+      }
+    },
+    "y": {
+      "aggregate": "sum",
+      "field": "ValueRM",
+      "type": "quantitative",
+      "title": "Export Value (RM Million)",
+      "stack": "zero"
+    },
+    "color": {
+      "field": "ProductGroup",
+      "type": "nominal",
+      "title": "Product",
+      "scale": {
+        "domain": [
+          "Processed Palm Oil",
+          "Oleochemicals",
+          "Crude Palm Oil",
+          "Processed Palm Kernel Oil",
+          "Finished Products",
+          "Other minor products"
+        ],
+        "range": [
+          "#2A9D8F",
+          "#3D5A80",
+          "#F4A261",
+          "#E9C46A",
+          "#8E6C8A",
+          "#D9D9D9"
+        ]
+      }
+    },
+    "order": {
+      "field": "StackOrder",
+      "type": "quantitative",
+      "sort": "ascending"
+    },
+    "tooltip": [
+      {
+        "field": "Year",
+        "type": "ordinal"
+      },
+      {
+        "field": "ProductGroup",
+        "type": "nominal",
+        "title": "Product"
+      },
+      {
+        "aggregate": "sum",
+        "field": "ValueRM",
+        "type": "quantitative",
+        "title": "Export Value (RM Million)",
+        "format": ","
+      }
+    ]
+  },
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFontSize": 11,
+      "titleFontSize": 12
+    },
+    "legend": {
+      "labelFontSize": 11,
+      "titleFontSize": 12
+    }
+  }
+}
