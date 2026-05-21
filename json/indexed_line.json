@@ -2,12 +2,6 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": 750,
   "height": 430,
-
-  "title": {
-    "text": "CPO Production Growth Since 2010",
-    "subtitle": "Select a country to highlight its growth trend"
-  },
-
   "data": {
     "url": "data/CPO-Production.csv"
   },
