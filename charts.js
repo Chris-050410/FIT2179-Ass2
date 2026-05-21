@@ -42,3 +42,8 @@ var vg_9 = "json/indexed_line.json";
 vegaEmbed("#indexed_line", vg_9, {actions: false}).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
 }).catch(console.error);
+
+var vg_10 = "json/donut_chart.json";
+vegaEmbed("#donut_chart", vg_10, {actions: false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+}).catch(console.error);

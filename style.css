@@ -39,21 +39,23 @@ body {
 
 /* Header */
 header {
-  text-align: center;
-  margin-bottom: 36px;
+  text-align: left;
+  margin-bottom: 38px;
+  font-family: 'Times New Roman', Times, serif;
+  color: black;
 }
 
 header h1 {
   margin-bottom: 8px;
-  font-size: 34px;
-  color: #3b2f1f;
+  font-size: 38px;
+  color: black;
   font-family: 'Times New Roman', Times, serif;
 }
 
 header p {
   margin: 0;
-  font-size: 16px;
-  color: #666;
+  font-size: 30px;
+  color: black;
   font-family: 'Times New Roman', Times, serif;
 }
 
@@ -65,7 +67,7 @@ header p {
 .section h2 {
   font-size: 24px;
   margin-bottom: 18px;
-  color: #3b2f1f;
+  color: black;
   border-left: 6px solid #c97926;
   padding-left: 12px;
   font-family: 'Times New Roman', Times, serif;
@@ -257,6 +259,54 @@ footer {
   position: absolute;
   right: 76px;
   top: 50px;
+  width: 320px;
+
+  text-align: left;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  line-height: 1.25;
+  opacity: 0.8;
+
+  pointer-events: none;
+}
+
+.export-layout {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+#stacked_area_product {
+  flex: 2;
+}
+
+#small_multi_export {
+  flex: 1;
+}
+
+.stacked_insight {
+  position: absolute;
+  right: 76px;
+  top: 50px;
+  width: 320px;
+
+  text-align: left;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  line-height: 1.25;
+  opacity: 0.8;
+
+  pointer-events: none;
+}
+
+.line_insight {
+  position: absolute;
+  right: 76px;
+  top: 60px;
   width: 320px;
 
   text-align: left;

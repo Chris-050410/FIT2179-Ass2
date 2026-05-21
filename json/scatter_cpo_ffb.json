@@ -116,13 +116,13 @@
       {
         "field": "CPO_RM_Tonnes",
         "type": "quantitative",
-        "title": "CPO Price",
+        "title": "Crude Palm Oil Price (RM Tonnes)",
         "format": ".1f"
       },
       {
         "field": "FFB_RM_Tonnes",
         "type": "quantitative",
-        "title": "FFB Price",
+        "title": "Fresh Fruit Bunch Price (RM Tonnes)",
         "format": ".2f"
       }
     ]

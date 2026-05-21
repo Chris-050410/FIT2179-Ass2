@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Stacked area chart showing Malaysia palm oil export value composition by product from 2000 to 2020.",
-  "width": 800,
-  "height": 450,
+  "width": 775,
+  "height": 300,
   "data": {
     "url": "data/vol_val_exp_product.csv"
   },
@@ -103,8 +103,12 @@
       "titleFontSize": 12
     },
     "legend": {
-      "labelFontSize": 11,
-      "titleFontSize": 12
+      "labelFontSize": 12,
+      "titleFontSize": 15,
+      "orient": "none",
+      "legendX": 20,
+      "legendY": 20,
+      "symbolSize": 300
     }
   }
 }
