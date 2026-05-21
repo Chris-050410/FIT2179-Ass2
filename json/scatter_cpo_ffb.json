@@ -1,0 +1,135 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Interactive scatter plot showing the relationship between CPO price and FFB price across Malaysian regions.",
+  "width": 650,
+  "height": 420,
+  "title": {
+    "text": "CPO Price and FFB Price Move Together",
+    "subtitle": "Click a region in the legend to highlight it"
+  },
+  "data": {
+    "url": "../data/combine_ffb_cpo.csv"
+  },
+  "transform": [
+    {
+      "filter": "datum.CPO_RM_Tonnes > 0 && datum.FFB_RM_Tonnes > 0"
+    }
+  ],
+  "params": [
+    {
+      "name": "selectedRegion",
+      "select": {
+        "type": "point",
+        "fields": ["Region"]
+      },
+      "bind": "legend"
+    }
+  ],
+  "mark": {
+    "type": "point",
+    "filled": true,
+    "size": 200,
+    "stroke": "white",
+    "strokeWidth": 0.5
+  },
+  "encoding": {
+    "x": {
+      "field": "CPO_RM_Tonnes",
+      "type": "quantitative",
+      "title": "CPO Price (RM/Tonnes)",
+      "scale": {
+        "zero": false,
+        "domain": [800, 3400],
+        "nice": false
+      }
+    },
+    "y": {
+      "field": "FFB_RM_Tonnes",
+      "type": "quantitative",
+      "title": "FFB Price (RM/Tonnes)",
+      "scale": {
+        "zero": false,
+        "domain": [5, 40],
+        "nice": false
+      }
+    },
+    "xOffset": {
+      "field": "Region"
+    },
+    "yOffset": {
+      "field": "Region"
+    },
+    "color": {
+      "field": "Region",
+      "type": "nominal",
+      "title": "Region",
+      "scale": {
+        "domain": [
+          "North",
+          "South",
+          "Central",
+          "East Coast",
+          "Sabah",
+          "Sarawak"
+        ],
+        "range": [
+          "#4E79A7",
+          "#F28E2B",
+          "#76B7B2",
+          "#EDC948",
+          "#B07AA1",
+          "#FF9DA7"
+        ]
+      }
+    },
+    "opacity": {
+      "condition": {
+        "param": "selectedRegion",
+        "value": 0.85
+      },
+      "value": 0.15
+    },
+    "size": {
+      "condition": {
+        "param": "selectedRegion",
+        "value": 260
+      },
+      "value": 120
+    },
+    "tooltip": [
+      {
+        "field": "Year",
+        "type": "ordinal",
+        "title": "Year"
+      },
+      {
+        "field": "Region",
+        "type": "nominal",
+        "title": "Region"
+      },
+      {
+        "field": "CPO_RM_Tonnes",
+        "type": "quantitative",
+        "title": "CPO Price",
+        "format": ".1f"
+      },
+      {
+        "field": "FFB_RM_Tonnes",
+        "type": "quantitative",
+        "title": "FFB Price",
+        "format": ".2f"
+      }
+    ]
+  },
+  "config": {
+    "axis": {
+      "grid": true
+    },
+    "view": {
+      "stroke": null
+    },
+    "legend": {
+      "orient": "right"
+    }
+  }
+}

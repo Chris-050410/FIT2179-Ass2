@@ -1,0 +1,292 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+  "width": 760,
+  "height": 420,
+
+  "data": {
+    "url": "../data/num_independent_smallholder_state.csv"
+  },
+
+  "transform": [
+    {
+      "joinaggregate": [
+        {
+          "op": "sum",
+          "field": "Value",
+          "as": "TotalSmallholders"
+        }
+      ],
+      "groupby": ["State"]
+    },
+
+    {
+      "window": [
+        {
+          "op": "dense_rank",
+          "as": "StateRank"
+        }
+      ],
+      "sort": [
+        {
+          "field": "TotalSmallholders",
+          "order": "descending"
+        }
+      ]
+    },
+
+    {
+      "calculate": "datum.StateRank <= 6 ? datum.State : 'Others'",
+      "as": "StateGroup"
+    },
+
+    {
+      "joinaggregate": [
+        {
+          "op": "max",
+          "field": "Year",
+          "as": "LatestYear"
+        }
+      ]
+    },
+
+    {
+      "calculate": "datum.Year == datum.LatestYear",
+      "as": "isLatest"
+    }
+  ],
+
+  "encoding": {
+    "x": {
+      "field": "Year",
+      "type": "ordinal",
+      "title": "Year",
+      "axis": {
+        "labelAngle": 0,
+        "labelFontSize": 12,
+        "titleFontSize": 14
+      }
+    },
+
+    "y": {
+      "field": "Value",
+      "type": "quantitative",
+      "title": "Number of Independent Smallholders",
+      "axis": {
+        "labelFontSize": 12,
+        "titleFontSize": 14
+      }
+    },
+
+    "detail": {
+      "field": "State",
+      "type": "nominal"
+    }
+  },
+
+  "layer": [
+    {
+      "params": [
+        {
+          "name": "hover",
+          "select": {
+            "type": "point",
+            "fields": ["State"],
+            "on": "mouseover",
+            "clear": "mouseout"
+          }
+        }
+      ],
+
+      "mark": {
+        "type": "line",
+        "strokeWidth": 28,
+        "strokeCap": "round",
+        "strokeJoin": "round",
+        "opacity": 0.01
+      },
+
+      "encoding": {
+        "tooltip": [
+          {
+            "field": "State",
+            "type": "nominal",
+            "title": "State"
+          },
+          {
+            "field": "Year",
+            "type": "ordinal",
+            "title": "Year"
+          },
+          {
+            "field": "Value",
+            "type": "quantitative",
+            "title": "Smallholders",
+            "format": ","
+          }
+        ]
+      }
+    },
+
+    {
+      "mark": {
+        "type": "line",
+        "strokeWidth": 3,
+        "strokeCap": "round",
+        "strokeJoin": "round"
+      },
+
+      "encoding": {
+        "color": {
+          "field": "StateGroup",
+          "type": "nominal",
+
+          "scale": {
+            "domain": [
+              "Johor",
+              "Perak",
+              "Pahang",
+              "Sabah",
+              "Sarawak",
+              "Selangor",
+              "Others"
+            ],
+
+            "range": [
+              "#4E79A7",
+              "#F28E2B",
+              "#B07AA1",
+              "#76B7B2",
+              "#EDC948",
+              "#9C755F",
+              "#CFCFCF"
+            ]
+          },
+
+          "legend": null
+        },
+
+        "opacity": {
+          "condition": {
+            "param": "hover",
+            "value": 1
+          },
+          "value": 0.75
+        }
+      }
+    },
+
+    {
+      "transform": [
+        {
+          "filter": "datum.isLatest == true && datum.StateGroup != 'Others'"
+        }
+      ],
+
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "middle",
+        "dx": 8,
+        "fontSize": 13,
+        "fontWeight": "bold"
+      },
+
+      "encoding": {
+        "text": {
+          "field": "State"
+        },
+
+        "color": {
+          "field": "StateGroup",
+          "type": "nominal",
+
+          "scale": {
+            "domain": [
+              "Johor",
+              "Perak",
+              "Pahang",
+              "Sabah",
+              "Sarawak",
+              "Selangor"
+            ],
+
+            "range": [
+              "#4E79A7",
+              "#F28E2B",
+              "#B07AA1",
+              "#76B7B2",
+              "#EDC948",
+              "#9C755F"
+            ]
+          },
+
+          "legend": null
+        }
+      }
+    },
+
+    {
+      "transform": [
+        {
+          "filter": "datum.isLatest == true && datum.StateGroup == 'Others'"
+        },
+
+        {
+          "joinaggregate": [
+            {
+              "op": "mean",
+              "field": "Value",
+              "as": "MeanOthersValue"
+            }
+          ]
+        },
+
+        {
+          "window": [
+            {
+              "op": "row_number",
+              "as": "rowNum"
+            }
+          ]
+        },
+
+        {
+          "filter": "datum.rowNum == 1"
+        }
+      ],
+
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "middle",
+        "dx": 8,
+        "fontSize": 13,
+        "fontWeight": "bold",
+        "color": "#8F8F8F"
+      },
+
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "ordinal"
+        },
+
+        "y": {
+          "field": "MeanOthersValue",
+          "type": "quantitative"
+        },
+
+        "text": {
+          "value": "Others"
+        }
+      }
+    }
+  ],
+
+  "config": {
+    "view": {
+      "stroke": null
+    }
+  }
+}
