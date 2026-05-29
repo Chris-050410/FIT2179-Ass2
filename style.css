@@ -47,14 +47,14 @@ header {
 
 header h1 {
   margin-bottom: 8px;
-  font-size: 38px;
+  font-size: 44px;
   color: black;
   font-family: 'Times New Roman', Times, serif;
 }
 
 header p {
   margin: 0;
-  font-size: 30px;
+  font-size: 34px;
   color: black;
   font-family: 'Times New Roman', Times, serif;
 }
@@ -65,7 +65,7 @@ header p {
 }
 
 .section h2 {
-  font-size: 24px;
+  font-size: 28px;
   margin-bottom: 18px;
   color: black;
   border-left: 6px solid #c97926;
@@ -90,7 +90,7 @@ header p {
   margin: 0 0 4px -16px;
   margin-left: -100;
   padding-left: 8px;
-  font-size: 18px;
+  font-size: 24px;
   font-weight: 600;
   color: black;
   font-family: 'Times New Roman', Times, serif;
@@ -100,7 +100,7 @@ header p {
   display: block;
   margin: 0 0 10px -16px;
   padding-left: 8px;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 600;
   color: black;
   font-family: 'Times New Roman', Times, serif;
@@ -177,41 +177,25 @@ footer {
 .map-annotation {
   position: absolute;
   left: 280px;
-  top: 230px;
+  top: 210px;
   width: 300px;
 
   text-align: center;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 500;
   font-family: Arial, Helvetica, sans-serif;
-  color: black;
+  color: green;
   line-height: 1.25;
-  opacity: 0.75;
+  opacity: 1;
 
   pointer-events: none;
 }
 
 /* Insight box */
-.key-insight {
-  position: absolute;
-  right: 165px;
-  top: 425px;
-  width: 300px;
-
-  text-align: center;
-  font-size: 20px;
-  font-weight: 600;
-  font-family: 'Times New Roman', Times, serif;
-  color: black;
-  line-height: 1.25;
-  opacity: 0.8;
-
-  pointer-events: none;
-}
 
 .multi_line_state_insight {
   position: absolute;
-  right: 76px;
+  right: 70px;
   top: 60px;
   width: 320px;
 
@@ -228,7 +212,7 @@ footer {
 
 .insight-title {
   display: block;
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 700;
   color: #000;
   margin-bottom: 6px;
@@ -236,7 +220,7 @@ footer {
 
 .heatmap_insight {
   position: absolute;
-  right: 76px;
+  right: 70px;
   bottom: 40px;
   width: 320px;
 
@@ -257,8 +241,8 @@ footer {
 
 .scatter_insight {
   position: absolute;
-  right: 76px;
-  top: 50px;
+  right: 70px;
+  top: 85px;
   width: 320px;
 
   text-align: left;
@@ -288,7 +272,7 @@ footer {
 
 .stacked_insight {
   position: absolute;
-  right: 76px;
+  right: 70px;
   top: 50px;
   width: 320px;
 
@@ -305,7 +289,7 @@ footer {
 
 .line_insight {
   position: absolute;
-  right: 76px;
+  right: 70px;
   top: 50px;
   width: 320px;
 
@@ -318,4 +302,91 @@ footer {
   opacity: 0.8;
 
   pointer-events: none;
+}
+
+.world_line_insight {
+  position: absolute;
+  right: 70px;
+  top: 50px;
+  width: 320px;
+
+  text-align: left;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  line-height: 1.25;
+  opacity: 0.8;
+
+  pointer-events: none;
+}
+
+.indexed_line_insight {
+  position: absolute;
+  right: 70px;
+  top: 50px;
+  width: 320px;
+
+  text-align: left;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  line-height: 1.25;
+  opacity: 0.8;
+
+  pointer-events: none;
+}
+
+.slope_graph_insight {
+  position: absolute;
+  right: 70px;
+  top: 50px;
+  width: 320px;
+
+  text-align: left;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  line-height: 1.25;
+  opacity: 0.8;
+
+  pointer-events: none;
+}
+
+.key_insight {
+  position: absolute;
+  right: 50px;
+  top: 425px;
+  width: 335px;
+
+  text-align: left;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  line-height: 1.25;
+  opacity: 0.8;
+
+  pointer-events: none;
+}
+
+.insight-text strong {
+  font-size: 20px;
+  font-weight: 800;
+  color: #5a3b12;
+}
+
+.insight-text .east {
+  color: #1f6f4a;
+}
+
+.insight-text .peninsular {
+  color: #7a4d1a;
+}
+
+.insight-text .highlight {
+  color: #c45f00;
+  font-size: 20px;
 }

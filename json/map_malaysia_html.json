@@ -20,8 +20,8 @@
       "height": 430,
       "projection": {
         "type": "mercator",
-        "center": [99.4, 10.0],
-        "scale": 2500
+        "center": [99.4, 8.9],
+        "scale": 2450
       },
       "layer": [
         {
@@ -127,7 +127,7 @@
               },
               "legend": {
                 "orient": "bottom",
-                "offset": -20,
+                "offset": 12,
                 "labelFontSize": 12,
                 "titleFontSize": 15,
                 "symbolType": "square"
@@ -172,27 +172,74 @@
               {"State": "Terengganu", "lon": 103.05, "lat": 4.85},
               {"State": "Pahang", "lon": 102.65, "lat": 3.75},
               {"State": "Selangor", "lon": 101.5, "lat": 3.35},
-              {"State": "Negeri Sembilan", "lon": 102.2, "lat": 2.75},
-              {"State": "Melaka", "lon": 102.3, "lat": 2.3},
+              {"State": "Negeri Sembilan", "lon": 101.6, "lat": 2.75},
+              {"State": "Melaka", "lon": 102.0, "lat": 2.3},
               {"State": "Johor", "lon": 103.45, "lat": 2.1},
               {"State": "Sabah", "lon": 117.0, "lat": 5.45},
               {"State": "Sarawak", "lon": 113.0, "lat": 2.5}
             ]
           },
+          "transform": [
+            {
+              "calculate": "datum.State + '-' + selectedYear",
+              "as": "StateYear"
+            },
+            {
+              "lookup": "StateYear",
+              "from": {
+                "data": {
+                  "url": "data/num_independent_smallholder_state.csv"
+                },
+                "key": "StateYear",
+                "fields": ["Value"]
+              }
+            },
+            {
+              "joinaggregate": [
+                {
+                  "op": "sum",
+                  "field": "Value",
+                  "as": "TotalSmallholders"
+                }
+              ]
+            },
+            {
+              "calculate": "datum.Value / datum.TotalSmallholders * 100",
+              "as": "StateShare"
+            },
+            {
+              "calculate": "datum.StateShare < 10 ? '#1F2937' : '#FFF4E6'",
+              "as": "LabelColor"
+            },
+            {
+              "calculate": "datum.StateShare < 10 ? '#FFF4E6' : '#1F2937'",
+              "as": "StrokeColor"
+            }
+          ],
           "mark": {
             "type": "text",
             "fontSize": 12,
             "fontWeight": "bold",
-            "fill": "#fdfdfd",
-            "stroke": "#3f3f3f",
-            "strokeWidth": 0.7,
             "align": "center",
             "baseline": "middle"
           },
           "encoding": {
             "longitude": {"field": "lon", "type": "quantitative"},
             "latitude": {"field": "lat", "type": "quantitative"},
-            "text": {"field": "State", "type": "nominal"}
+            "text": {"field": "State", "type": "nominal"},
+            "color": {
+              "field": "LabelColor",
+              "type": "nominal",
+              "scale": null
+            },
+            "stroke": {
+              "field": "StrokeColor",
+              "type": "nominal",
+              "scale": null
+            },
+            "strokeWidth": {
+              "value": 0.5
+            }
           }
         }
       ]
@@ -200,7 +247,7 @@
     {
       "vconcat": [
         {
-          "width": 300,
+          "width": 275,
           "height": 300,
           "data": {
             "url": "data/num_independent_smallholder_state.csv"
@@ -257,13 +304,6 @@
           "view": {
             "stroke": null
           },
-          "data": {
-            "values": [
-              {
-                "text": "Malaysia’s independent smallholder activity remains\n concentrated in a few dominant states, but over time\n the industry’s centre of influence increasingly shifts\n toward East Malaysia as Sabah and Sarawak expand\n their contribution to the national total."
-              }
-            ]
-          },
           "mark": {
             "type": "text",
             "align": "left",
@@ -282,5 +322,6 @@
         }
       ]
     }
-  ], "spacing": 20
+  ],
+  "spacing": 20
 }

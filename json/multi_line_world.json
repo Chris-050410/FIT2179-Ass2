@@ -30,7 +30,7 @@
     "y": {
       "field": "CPO_Production",
       "type": "quantitative",
-      "title": "CPO Production (Thousand Tonnes)"
+      "title": "Crude Palm Oil Production (Thousand Tonnes)"
     },
     "detail": {
       "field": "Country",
@@ -64,7 +64,7 @@
           {
             "field": "CPO_Production",
             "type": "quantitative",
-            "title": "CPO Production (Thousand Tonnes)",
+            "title": "Crude Palm Oil Production (Thousand Tonnes)",
             "format": ","
           }
         ]

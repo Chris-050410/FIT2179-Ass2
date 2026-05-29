@@ -212,13 +212,13 @@
           {
             "field": "ProductionNum",
             "type": "quantitative",
-            "title": "CPO Production",
+            "title": "Crude Palm Oil Production",
             "format": ","
           },
           {
             "field": "Index",
             "type": "quantitative",
-            "title": "Index, 2010 = 100",
+            "title": "Production Index",
             "format": ".1f"
           }
         ]
@@ -236,7 +236,12 @@
       "grid": true
     },
     "legend": {
-      "orient": "right"
+      "labelFontSize": 12,
+      "titleFontSize": 15,
+      "orient": "none",
+      "legendX": 30,
+      "legendY": 15,
+      "symbolSize": 300
     }
   }
 }

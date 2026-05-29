@@ -65,7 +65,7 @@
         },
         "tooltip": [
           {"field": "Year", "type": "ordinal", "title": "Year"},
-          {"field": "Region", "type": "nominal", "title": "Region"},
+          {"field": "Region", "type": "nominal", "title": "Zone"},
           {
             "field": "FFB_RM_Tonnes",
             "type": "quantitative",
@@ -129,7 +129,7 @@
               },
               "tooltip": [
                 {"field": "Year", "type": "ordinal", "title": "Year"},
-                {"field": "Region", "type": "nominal", "title": "Region"},
+                {"field": "Region", "type": "nominal", "title": "Zone"},
                 {
                   "field": "FFB_RM_Tonnes",
                   "type": "quantitative",
@@ -175,7 +175,7 @@
               },
               "tooltip": [
                 {"field": "Year", "type": "ordinal", "title": "Year"},
-                {"field": "Region", "type": "nominal", "title": "Region"},
+                {"field": "Region", "type": "nominal", "title": "Zone"},
                 {
                   "field": "FFB_RM_Tonnes",
                   "type": "quantitative",
