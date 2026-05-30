@@ -188,6 +188,9 @@
         "align": "left",
         "baseline": "middle",
         "dx": 8,
+        "dy": {
+  "expr": "datum.State == 'Sabah' ? 5 : 0"
+},
         "fontSize": 13,
         "fontWeight": "bold"
       },

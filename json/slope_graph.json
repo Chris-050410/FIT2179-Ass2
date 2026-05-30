@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": 700,
-  "height": 420,
+  "height": 320,
   "data": {
     "url": "data/vol_val_exp_product.csv"
   },
@@ -11,7 +11,7 @@
       "as": "ProductName"
     },
     {
-      "filter": "indexof(['2000','2005','2010','2015','2020'], toString(datum.Year)) >= 0"
+      "filter": "indexof(['2000','2002','2004','2006','2008','2010','2012','2014','2016','2018','2020'], toString(datum.Year)) >= 0"
     },
     {
       "filter": "datum['Value (RM Million)'] != '-' && datum['Value (RM Million)'] != null"
@@ -29,6 +29,32 @@
   "layer": [
     {
       "mark": {
+        "type": "rule",
+        "strokeDash": [6, 4],
+        "color": "#666666",
+        "strokeWidth": 2
+      },
+      "encoding": {
+        "x": { "value": 665 }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "text": "COVID-19 Pandemic",
+        "align": "center",
+        "baseline": "bottom",
+        "fontSize": 11,
+        "fontWeight": "bold",
+        "color": "#666666"
+      },
+      "encoding": {
+        "x": { "value": 665 },
+        "y": { "value": -5 }
+      }
+    },
+    {
+      "mark": {
         "type": "line",
         "point": {
           "filled": true,
@@ -41,7 +67,19 @@
           "field": "Year",
           "type": "ordinal",
           "title": null,
-          "sort": ["2000", "2005", "2010", "2015", "2020"],
+          "sort": [
+            "2000",
+            "2002",
+            "2004",
+            "2006",
+            "2008",
+            "2010",
+            "2012",
+            "2014",
+            "2016",
+            "2018",
+            "2020"
+          ],
           "scale": {
             "padding": 0
           },
@@ -94,9 +132,21 @@
           "field": "ProductName"
         },
         "tooltip": [
-          {"field": "ProductName", "type": "nominal", "title": "Product"},
-          {"field": "Year", "type": "ordinal", "title": "Year"},
-          {"field": "Rank", "type": "quantitative", "title": "Rank"},
+          {
+            "field": "ProductName",
+            "type": "nominal",
+            "title": "Product"
+          },
+          {
+            "field": "Year",
+            "type": "ordinal",
+            "title": "Year"
+          },
+          {
+            "field": "Rank",
+            "type": "quantitative",
+            "title": "Rank"
+          },
           {
             "field": "ExportValue",
             "type": "quantitative",
@@ -122,7 +172,19 @@
         "x": {
           "field": "Year",
           "type": "ordinal",
-          "sort": ["2000", "2005", "2010", "2015", "2020"],
+          "sort": [
+            "2000",
+            "2002",
+            "2004",
+            "2006",
+            "2008",
+            "2010",
+            "2012",
+            "2014",
+            "2016",
+            "2018",
+            "2020"
+          ],
           "scale": {
             "padding": 0
           }

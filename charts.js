@@ -3,13 +3,13 @@ vegaEmbed("#malaysia_map", vg_1, {actions: false}).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
 }).catch(console.error);
 
-var vg_2 = "json/multi_line_heatmap.json";
+var vg_2 = "json/heatmap_bar_chart.json";
 vegaEmbed("#heatmap_small_multi_line", vg_2, {actions: false}).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
 }).catch(console.error);
 
-var vg_3 = "json/scatter_cpo_ffb.json";
-vegaEmbed("#scatter_plot", vg_3, {actions: false}).then(function(result) {
+var vg_3 = "json/stacked_bar.json";
+vegaEmbed("#stacked_bar", vg_3, {actions: false}).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
 }).catch(console.error);
 

@@ -1,7 +1,10 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": 750,
-  "height": 430,
+  "height": 340,
+  "padding": {
+    "right": 120
+  },
   "data": {
     "url": "data/CPO-Production.csv"
   },
@@ -64,9 +67,7 @@
         "color": "#777"
       },
       "encoding": {
-        "y": {
-          "datum": 100
-        }
+        "y": { "datum": 100 }
       }
     },
 
@@ -81,12 +82,8 @@
         "fontSize": 12
       },
       "encoding": {
-        "x": {
-          "value": 690
-        },
-        "y": {
-          "datum": 100
-        }
+        "x": { "value": 690 },
+        "y": { "datum": 100 }
       }
     },
 
@@ -102,21 +99,15 @@
           "field": "Period",
           "type": "ordinal",
           "title": "Year",
-          "axis": {
-            "labelAngle": 0
-          }
+          "axis": { "labelAngle": 0 }
         },
         "y": {
           "field": "Index",
           "type": "quantitative",
           "title": "Production Index (2010 = 100)",
-          "axis": {
-            "format": ".0f"
-          }
+          "axis": { "format": ".0f" }
         },
-        "detail": {
-          "field": "Country"
-        }
+        "detail": { "field": "Country" }
       }
     },
 
@@ -135,14 +126,8 @@
         }
       },
       "encoding": {
-        "x": {
-          "field": "Period",
-          "type": "ordinal"
-        },
-        "y": {
-          "field": "Index",
-          "type": "quantitative"
-        },
+        "x": { "field": "Period", "type": "ordinal" },
+        "y": { "field": "Index", "type": "quantitative" },
         "color": {
           "field": "Country",
           "type": "nominal",
@@ -170,8 +155,52 @@
             ]
           }
         },
-        "detail": {
-          "field": "Country"
+        "detail": { "field": "Country" }
+      }
+    },
+
+    {
+      "transform": [
+        {
+          "filter": "SelectedCountryCPOIndex != 'All' && datum.Country == SelectedCountryCPOIndex && datum.Period == 2024"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 8,
+        "fontSize": 12,
+        "fontWeight": "bold"
+      },
+      "encoding": {
+        "x": { "field": "Period", "type": "ordinal" },
+        "y": { "field": "Index", "type": "quantitative" },
+        "text": { "field": "Country" },
+        "color": {
+          "field": "Country",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Indonesia",
+              "Malaysia",
+              "Thailand",
+              "Colombia",
+              "Nigeria",
+              "Papua New Guinea",
+              "Honduras",
+              "Ghana"
+            ],
+            "range": [
+              "#1F77B4",
+              "#9467BD",
+              "#FF7F0E",
+              "#8C564B",
+              "#E377C2",
+              "#17BECF",
+              "#A6761D",
+              "#7F7F7F"
+            ]
+          }
         }
       }
     },
@@ -188,27 +217,12 @@
         "opacity": 0.001
       },
       "encoding": {
-        "x": {
-          "field": "Period",
-          "type": "ordinal"
-        },
-        "y": {
-          "field": "Index",
-          "type": "quantitative"
-        },
-        "detail": {
-          "field": "Country"
-        },
+        "x": { "field": "Period", "type": "ordinal" },
+        "y": { "field": "Index", "type": "quantitative" },
+        "detail": { "field": "Country" },
         "tooltip": [
-          {
-            "field": "Country",
-            "type": "nominal"
-          },
-          {
-            "field": "Period",
-            "type": "ordinal",
-            "title": "Year"
-          },
+          { "field": "Country", "type": "nominal" },
+          { "field": "Period", "type": "ordinal", "title": "Year" },
           {
             "field": "ProductionNum",
             "type": "quantitative",
@@ -227,9 +241,7 @@
   ],
 
   "config": {
-    "view": {
-      "stroke": null
-    },
+    "view": { "stroke": null },
     "axis": {
       "domain": false,
       "tickSize": 0,
@@ -240,8 +252,8 @@
       "titleFontSize": 15,
       "orient": "none",
       "legendX": 30,
-      "legendY": 15,
-      "symbolSize": 300
+      "legendY": 10,
+      "symbolSize": 200
     }
   }
 }

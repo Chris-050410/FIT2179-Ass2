@@ -1,0 +1,163 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "data/oil_palm_area.csv"
+  },
+  "padding":{
+    "right": 40
+  },
+  "hconcat": [
+    {
+      "width": 750,
+      "height": 450,
+      "params": [
+        {
+          "name": "selectedCells",
+          "select": {
+            "type": "interval",
+            "encodings": ["x", "y"]
+          }
+        }
+      ],
+      "transform": [
+        {
+          "calculate": "(datum.Immature / datum.Total) * 100",
+          "as": "ImmaturePercent"
+        }
+      ],
+      "mark": {
+        "type": "rect",
+        "stroke": "#f2f2f2",
+        "strokeWidth": 1
+      },
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "ordinal",
+          "title": "Year",
+          "axis": { "labelAngle": 0 }
+        },
+        "y": {
+          "field": "State",
+          "type": "nominal",
+          "title": null,
+          "sort": [
+            "Sarawak",
+            "Sabah",
+            "Pahang",
+            "Johor",
+            "Perak",
+            "Negeri Sembilan",
+            "Terengganu",
+            "Kelantan",
+            "Selangor",
+            "Kedah",
+            "Melaka",
+            "Pulau Pinang",
+            "Perlis"
+          ],
+          "axis": { "labelFontSize": 12 }
+        },
+        "color": {
+          "field": "ImmaturePercent",
+          "type": "quantitative",
+          "title": "Within-State Immature Share (%)",
+          "legend": {
+            "orient": "bottom",
+            "direction": "horizontal",
+            "gradientLength": 260,
+            "titleFontSize": 11,
+            "labelFontSize": 10,
+            "format": ".1f",
+            "offset": -5
+          },
+          "scale": {
+            "range": ["#fff7bc", "#fec44f", "#fe9929", "#d95f0e", "#993404"]
+          }
+        },
+        "opacity": {
+          "condition": { "param": "selectedCells", "value": 1 },
+          "value": 0.45
+        },
+        "tooltip": [
+          { "field": "State", "type": "nominal", "title": "State" },
+          { "field": "Year", "type": "ordinal", "title": "Year" },
+          { "field": "Matured", "type": "quantitative", "title": "Matured Area (hectares)", "format": "," },
+          { "field": "Immature", "type": "quantitative", "title": "Immature Area (hectares)", "format": "," },
+          { "field": "Total", "type": "quantitative", "title": "Total Area (hectares)", "format": "," },
+          { "field": "ImmaturePercent", "type": "quantitative", "title": "Immature Share (%)", "format": ".2f" }
+        ]
+      }
+    },
+    {
+      "width": 275,
+      "height": 250,
+      "transform": [
+        {
+          "filter": "length(data('selectedCells_store')) == 0 || vlSelectionTest('selectedCells_store', datum)"
+        },
+        {
+          "aggregate": [
+            {
+              "op": "sum",
+              "field": "Immature",
+              "as": "SelectedImmatureArea"
+            }
+          ],
+          "groupby": ["State"]
+        },
+        {
+          "calculate": "datum.SelectedImmatureArea / 1000",
+          "as": "SelectedImmatureAreaK"
+        }
+      ],
+      "mark": {
+        "type": "bar",
+        "cornerRadiusEnd": 4,
+        "color": "#d95f0e"
+      },
+      "encoding": {
+        "y": {
+          "field": "State",
+          "type": "nominal",
+          "title": null,
+          "sort": "-x",
+          "axis": { "labelFontSize": 11 }
+        },
+        "x": {
+          "field": "SelectedImmatureAreaK",
+          "type": "quantitative",
+          "title": "Selected Immature Area (Thousand hectares)",
+          "axis": {
+            "format": ".0f",
+            "labelFlush": false
+          }
+        },
+        "tooltip": [
+          { "field": "State", "type": "nominal", "title": "State" },
+          {
+            "field": "SelectedImmatureAreaK",
+            "type": "quantitative",
+            "title": "Selected Immature Area (Thousand hectares)",
+            "format": ".0f"
+          },
+          {
+            "field": "SelectedImmatureArea",
+            "type": "quantitative",
+            "title": "Selected Immature Area (hectares)",
+            "format": ",.0f"
+          }
+        ]
+      }
+    }
+  ],
+  "spacing": 15,
+  "config": {
+    "axis": { "grid": true },
+    "view": { "stroke": null },
+    "legend": {
+      "labelFontSize": 10,
+      "titleFontSize": 11
+    }
+  }
+}

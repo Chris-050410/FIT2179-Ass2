@@ -248,7 +248,7 @@
       "vconcat": [
         {
           "width": 275,
-          "height": 300,
+          "height": 250,
           "data": {
             "url": "data/num_independent_smallholder_state.csv"
           },

@@ -1,0 +1,214 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "100% stacked bar chart showing dominant state contributions to Malaysia's immature oil palm area.",
+  "width": 800,
+  "height": 260,
+  "data": {
+    "url": "data/oil_palm_area.csv"
+  },
+  "transform": [
+    {
+      "calculate": "toNumber(datum.Year)",
+      "as": "YearNum"
+    },
+    {
+      "filter": "indexof([2023, 2024, 2025], datum.YearNum) >= 0"
+    },
+    {
+      "calculate": "indexof(['Sabah', 'Sarawak', 'Pahang', 'Johor', 'Perak', 'Kelantan'], datum.State) >= 0 ? datum.State : 'Other states'",
+      "as": "StateGroup"
+    },
+    {
+      "aggregate": [
+        {
+          "op": "sum",
+          "field": "Immature",
+          "as": "ImmatureArea"
+        }
+      ],
+      "groupby": ["YearNum", "StateGroup"]
+    },
+    {
+      "joinaggregate": [
+        {
+          "op": "sum",
+          "field": "ImmatureArea",
+          "as": "NationalImmatureTotal"
+        }
+      ],
+      "groupby": ["YearNum"]
+    },
+    {
+      "calculate": "datum.ImmatureArea / datum.NationalImmatureTotal",
+      "as": "NationalShareRaw"
+    },
+    {
+      "calculate": "datum.NationalShareRaw * 100",
+      "as": "NationalShare"
+    },
+    {
+      "calculate": "format(datum.NationalShare, '.1f') + '%'",
+      "as": "ShareLabel"
+    },
+    {
+      "window": [
+        {
+          "op": "rank",
+          "as": "SmallShareRank"
+        }
+      ],
+      "groupby": ["YearNum"],
+      "sort": [
+        {
+          "field": "NationalShare",
+          "order": "ascending"
+        }
+      ]
+    },
+    {
+      "stack": "NationalShareRaw",
+      "groupby": ["YearNum"],
+      "sort": [
+        {
+          "field": "NationalShare",
+          "order": "descending"
+        }
+      ],
+      "as": ["x0", "x1"],
+      "offset": "normalize"
+    },
+    {
+      "calculate": "(datum.x0 + datum.x1) / 2",
+      "as": "xMid"
+    }
+  ],
+  "layer": [
+    {
+      "mark": {
+        "type": "bar",
+        "stroke": "white",
+        "strokeWidth": 1.2
+      },
+      "encoding": {
+        "y": {
+          "field": "YearNum",
+          "type": "ordinal",
+          "title": null,
+          "sort": [2023, 2024, 2025],
+          "axis": {
+            "labelFontSize": 16,
+            "labelFontWeight": "bold"
+          }
+        },
+        "x": {
+          "field": "x0",
+          "type": "quantitative",
+          "title": "Share of National Immature Area (%)",
+          "scale": {
+            "domain": [0, 1]
+          },
+          "axis": {
+            "format": ".0%",
+            "labelFontSize": 13,
+            "titleFontSize": 14
+          }
+        },
+        "x2": {
+          "field": "x1"
+        },
+        "color": {
+          "field": "StateGroup",
+          "type": "nominal",
+          "title": "State",
+          "scale": {
+            "domain": [
+              "Sabah",
+              "Sarawak",
+              "Pahang",
+              "Johor",
+              "Perak",
+              "Kelantan",
+              "Other states"
+            ],
+            "range": [
+              "#76B7B2",
+              "#EDC948",
+              "#B07AA1",
+              "#4E79A7",
+              "#F28E2B",
+              "#59A14F",
+              "#CFCFCF"
+            ]
+          },
+          "legend": {
+            "orient": "bottom",
+            "direction": "horizontal",
+            "labelFontSize": 13,
+            "titleFontSize": 14,
+            "symbolSize": 160,
+            "offset": -5
+          }
+        },
+        "tooltip": [
+          {
+            "field": "YearNum",
+            "title": "Year"
+          },
+          {
+            "field": "StateGroup",
+            "title": "State"
+          },
+          {
+            "field": "ImmatureArea",
+            "title": "Immature Area (hectares)",
+            "format": ","
+          },
+          {
+            "field": "NationalShare",
+            "title": "National Share (%)",
+            "format": ".1f"
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.NationalShare >= 6 || datum.SmallShareRank <= 2"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "middle",
+        "fontSize": 13,
+        "fontWeight": "bold",
+        "fill": "black",
+        "stroke": "white",
+        "strokeWidth": 0.3
+      },
+      "encoding": {
+        "y": {
+          "field": "YearNum",
+          "type": "ordinal",
+          "sort": [2023, 2024, 2025]
+        },
+        "x": {
+          "field": "xMid",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "ShareLabel"
+        }
+      }
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "grid": false
+    }
+  }
+}
