@@ -40,14 +40,14 @@ body {
 /* Header */
 header {
   text-align: left;
-  margin-bottom: 38px;
+  margin-bottom: 6px;
   font-family: 'Times New Roman', Times, serif;
   color: black;
 }
 
 header h1 {
-  margin-bottom: 8px;
-  font-size: 44px;
+  margin-bottom: 12px;
+  font-size: 64px;
   color: black;
   font-family: 'Times New Roman', Times, serif;
 }
@@ -65,8 +65,8 @@ header p {
 }
 
 .section h2 {
-  font-size: 28px;
-  margin-bottom: 18px;
+  font-size: 32px;
+  margin-bottom: 14px;
   color: black;
   border-left: 6px solid #c97926;
   padding-left: 12px;
@@ -90,7 +90,7 @@ header p {
   margin: 0 0 4px -16px;
   margin-left: -100;
   padding-left: 8px;
-  font-size: 24px;
+  font-size: 28px;
   font-weight: 600;
   color: black;
   font-family: 'Times New Roman', Times, serif;
@@ -100,8 +100,8 @@ header p {
   display: block;
   margin: 0 0 10px -16px;
   padding-left: 8px;
-  font-size: 20px;
-  font-weight: 600;
+  font-size: 22px;
+  font-weight: 500;
   color: black;
   font-family: 'Times New Roman', Times, serif;
 }
@@ -114,6 +114,24 @@ header p {
   font-weight: 600;
   color: black;
   font-family: 'Times New Roman', Times, serif;
+}
+
+.chart-card p3 {
+  position: absolute;
+
+  top: 525px; 
+  left: 586px;  
+
+  font-size: 16px;
+  color: black;
+
+  background: rgba(255, 255, 255, 0.92);
+  border: 2px solid black;
+  border-radius: 10px;
+
+  padding: 4px 8px;
+
+  box-shadow: 0 2px 6px rgba(0,0,0,0.12);
 }
 
 /* Layout helpers */
@@ -188,7 +206,7 @@ footer {
 .map-annotation {
   position: absolute;
   left: 280px;
-  top: 210px;
+  top: 195px;
   width: 300px;
 
   text-align: left;
@@ -206,8 +224,8 @@ footer {
 
 .multi_line_state_insight {
   position: absolute;
-  right: 60px;
-  top: 40px;
+  right: 50px;
+  top: 50px;
   width: 330px;
 
   text-align: left;
@@ -231,7 +249,7 @@ footer {
 
 .heatmap_insight {
   position: absolute;
-  right: 60px;
+  right: 50px;
   bottom: 25px;
   width: 330px;
 
@@ -252,8 +270,8 @@ footer {
 
 .stacked_bar_insight {
   position: absolute;
-  right: 70px;
-  top: 45px;
+  right: 60px;
+  top: 55px;
   width: 320px;
 
   text-align: left;
@@ -283,8 +301,8 @@ footer {
 
 .stacked_insight {
   position: absolute;
-  right: 70px;
-  top: 40px;
+  right: 60px;
+  top: 50px;
   width: 320px;
 
   text-align: left;
@@ -300,7 +318,7 @@ footer {
 
 .line_insight {
   position: absolute;
-  right: 70px;
+  right: 60px;
   top: 30px;
   width: 320px;
 
@@ -317,8 +335,8 @@ footer {
 
 .world_line_insight {
   position: absolute;
-  right: 70px;
-  top: 50px;
+  right: 60px;
+  top: 65px;
   width: 320px;
 
   text-align: left;
@@ -334,8 +352,8 @@ footer {
 
 .indexed_line_insight {
   position: absolute;
-  right: 70px;
-  top: 25px;
+  right: 60px;
+  top: 50px;
   width: 320px;
 
   text-align: left;
@@ -351,7 +369,7 @@ footer {
 
 .slope_graph_insight {
   position: absolute;
-  right: 70px;
+  right: 60px;
   top: 50px;
   width: 320px;
 
@@ -368,12 +386,12 @@ footer {
 
 .key_insight {
   position: absolute;
-  right: 60px;
-  top: 370px;
+  right: 50px;
+  top: 350px;
   width: 330px;
 
   text-align: left;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 500;
   font-family: Arial, Helvetica, sans-serif;
   color: black;
@@ -396,7 +414,18 @@ footer {
 
 #indexed_line .vega-bindings {
   position: absolute;
-  top: 345px;
-  right: -190px;
+  top: 285px;
+  right: -224px;
   font-weight: bold;
+}
+
+#indexed_line .vega-bindings label {
+  border: 2px solid black;
+  border-radius: 4px;
+  padding: 4px 6px;
+  background: white;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
 }

@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "100% stacked bar chart showing dominant state contributions to Malaysia's immature oil palm area.",
   "width": 800,
-  "height": 260,
+  "height": 200,
   "data": {
     "url": "data/oil_palm_area.csv"
   },

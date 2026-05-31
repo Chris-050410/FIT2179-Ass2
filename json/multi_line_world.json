@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 715,
-  "height": 280,
+  "width": 725,
+  "height": 235,
   "data": {
     "url": "data/CPO-Production.csv"
   },

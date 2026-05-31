@@ -61,13 +61,13 @@
         "color": {
           "field": "ImmaturePercent",
           "type": "quantitative",
-          "title": "Within-State Immature Share (%)",
+          "title": "Within-State Immature Share %",
           "legend": {
             "orient": "bottom",
             "direction": "horizontal",
-            "gradientLength": 260,
-            "titleFontSize": 11,
-            "labelFontSize": 10,
+            "gradientLength": 250,
+            "titleFontSize": 12,
+            "labelFontSize": 12,
             "format": ".1f",
             "offset": -5
           },
@@ -91,7 +91,7 @@
     },
     {
       "width": 275,
-      "height": 250,
+      "height": 275,
       "transform": [
         {
           "filter": "length(data('selectedCells_store')) == 0 || vlSelectionTest('selectedCells_store', datum)"
@@ -127,7 +127,7 @@
         "x": {
           "field": "SelectedImmatureAreaK",
           "type": "quantitative",
-          "title": "Selected Immature Area (Thousand hectares)",
+          "title": "State Immature Area (Thousand hectares)",
           "axis": {
             "format": ".0f",
             "labelFlush": false
@@ -138,13 +138,13 @@
           {
             "field": "SelectedImmatureAreaK",
             "type": "quantitative",
-            "title": "Selected Immature Area (Thousand hectares)",
+            "title": "State Immature Area (Thousand hectares)",
             "format": ".0f"
           },
           {
             "field": "SelectedImmatureArea",
             "type": "quantitative",
-            "title": "Selected Immature Area (hectares)",
+            "title": "State Immature Area (hectares)",
             "format": ",.0f"
           }
         ]
