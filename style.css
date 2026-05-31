@@ -148,10 +148,17 @@ header p {
 
 /* Footer */
 footer {
-  text-align: center;
-  font-size: 13px;
-  color: #777;
-  margin-top: 40px;
+  text-align: left;
+  font-size: 18px;
+  color: black;
+  margin-top: 20px;
+}
+
+footer r {
+  display: block;
+  margin-left: auto;
+  width: fit-content;
+  margin-top: -100px;
 }
 
 /* Responsive */
